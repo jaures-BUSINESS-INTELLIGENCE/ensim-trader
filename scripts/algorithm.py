@@ -8,7 +8,7 @@ HOLDINGS_URL = "http://raw.githubusercontent.com/exofri/ensim-trade-center/refs/
 MIN_MONEY_RESERVE = 50  # on ne dépense jamais sous cette réserve
 
 def fetch_json(url):
-    resp = requests.get(url, proxies={"http": None, "https": None}, timeout=(10, 20))
+   resp = requests.get(url, timeout=(10, 20))
     resp.raise_for_status()
     return resp.json()
 
