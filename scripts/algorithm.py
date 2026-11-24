@@ -1,14 +1,13 @@
 import json, time
 import requests
 
-
 MARKET_URL = "https://raw.githubusercontent.com/exofri/ensim-trade-center/refs/heads/main/docs/data/market.json"
-HOLDINGS_URL = "http://raw.githubusercontent.com/exofri/ensim-trade-center/refs/heads/main/traders/franck/holdings.json"
+HOLDINGS_URL = "https://raw.githubusercontent.com/exofri/ensim-trade-center/refs/heads/main/traders/franck/holdings.json"
 
 MIN_MONEY_RESERVE = 50  # on ne dépense jamais sous cette réserve
 
 def fetch_json(url):
- resp = requests.get(url, timeout=(10, 20))
+    resp = requests.get(url, timeout=(10, 20))
     resp.raise_for_status()
     return resp.json()
 
